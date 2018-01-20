@@ -1,0 +1,6 @@
+*.pyc
+__pycache__
+szt_env
+db.sqlite3
+.DS_Store
+.idea

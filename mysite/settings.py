@@ -25,7 +25,7 @@ SECRET_KEY = '#axicren*op_#^1k$+i$%2201(_e*$i*tv_ug*+yi&oplw6=^6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['wesolybanan.pythonanywhere.com']
 
 
 # Application definition

@@ -94,7 +94,7 @@ AUTHENTICATION_BACKENDS = (
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'pl'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Europe/Warsaw'
 

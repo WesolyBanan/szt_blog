@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
     'blog',
 )
 
@@ -49,6 +50,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 )
 
 ROOT_URLCONF = 'mysite.urls'
@@ -64,6 +66,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -82,6 +86,10 @@ DATABASES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -108,3 +116,10 @@ STATICFILES_DIRS = (
 )
 
 LOGIN_REDIRECT_URL = '/'
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'home'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '248636909007609'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'e8a33034382eaad7b59a37452a270979'  # App Secret
